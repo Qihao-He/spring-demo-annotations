@@ -1,0 +1,4 @@
+fortune 0.
+fortune 1.
+fortune 2.
+fortune 3.
