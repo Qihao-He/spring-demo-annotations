@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
 //@Scope("prototype")
 public class TennisCoach implements Coach {
 	
-//	@Autowired
+	@Autowired
+	@Qualifier("readFileFortuneService")
 //	@Qualifier("foo")
 //	@Qualifier("RESTFortuneService")
 //	@Qualifier("randomFortuneService")
@@ -22,11 +23,11 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach inside default constructor.");
 	}
 	
-    @Autowired
-    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
-        System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
-        this.fortuneService = fortuneService;
-    }
+//    @Autowired
+//    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+//        System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
+//        this.fortuneService = fortuneService;
+//    }
     
     @PostConstruct
     public void doMyStartupStuff() {

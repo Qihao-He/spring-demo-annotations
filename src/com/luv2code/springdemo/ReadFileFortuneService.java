@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,6 +33,11 @@ public class ReadFileFortuneService implements FortuneService {
 		}
 	}
 
+	@PostConstruct
+	public void readFortuneFromFile() {
+		System.out.println(">> ReadFileFortuneService inside readFortuneFromFile()");
+	}
+	
 	@Override
 	public String getFortune() {
 		int i = random.nextInt(fortuneList.size());
