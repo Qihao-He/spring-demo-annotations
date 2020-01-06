@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 //	@Autowired
@@ -29,13 +29,13 @@ public class TennisCoach implements Coach {
     }
     
     @PostConstruct
-    public void afterConstruct() {
-    	System.out.println(">> TennisCoach: inside after constructor");
+    public void doMyStartupStuff() {
+    	System.out.println(">> TennisCoach: inside doMyStartupStuff");
     }
     
     @PreDestroy
-    public void beforeDestruct() {
-    	System.out.println(">> TennisCoach: inside before destructor");
+    public void doMyCleanupStuff() {
+    	System.out.println(">> TennisCoach: inside doMyCleanupStuff");
     }
     
 //	@Autowired
